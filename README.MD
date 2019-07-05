@@ -2,7 +2,9 @@
 This repo contains basic configuration to run CakePHP 3 projects using Docker.
 To get it working you have to create your own project using composer like in this example:
 
-```composer create-project --prefer-dist cakephp/app myawesomeapp```
+```
+composer create-project --prefer-dist cakephp/app myawesomeapp
+```
 
 For more details about installation read the [DOC](https://book.cakephp.org/3.0/en/installation.html).
 
