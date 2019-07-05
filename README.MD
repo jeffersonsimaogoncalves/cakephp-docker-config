@@ -21,7 +21,8 @@ Edit your vhosts file adding this new line (this will enable navigation using lo
 ```
 
 ## Usage
-To use docker configuration just run this command inside your application's folder:
+To use docker configuration just run this command inside docker folder (placed
+in the root directory of the CakePHP project):
 
 ```
 docker-compose -f docker/docker-compose.yml up
