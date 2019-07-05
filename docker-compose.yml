@@ -1,5 +1,21 @@
 version: '3'
 services: 
+  db:
+    image: mariadb
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+    volumes:
+      - ./mariadb/conf.d:/etc/mysql/conf.d
+      - ./mariadb/data:/var/lib/mysql
+  adminer: 
+    image: adminer
+    restart: always
+    ports:
+      - "8881:8080"
   web:
     build: ./nginx
     ports:
@@ -9,11 +25,19 @@ services:
       - "./nginx/site.conf:/etc/nginx/conf.d/site.conf:cached"
     links:
       - php
+      - db
     stdin_open: true
     tty: true      
   php:
     build: ./php
+    links: 
+      - db
     ports:
       - "9000:9000"
     volumes:
       - "../:/app:cached"
+    environment: 
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_HOST: "${MYSQL_HOST}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"      
