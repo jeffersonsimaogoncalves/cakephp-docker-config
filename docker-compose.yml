@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  web:
+    build: ./nginx
+    ports:
+      - "8880:80"
+    volumes:
+      - "../:/app:cached"
+      - "./nginx/site.conf:/etc/nginx/conf.d/site.conf:cached"
+    links:
+      - php
+    stdin_open: true
+    tty: true      
+  php:
+    build: ./php
+    ports:
+      - "9000:9000"
+    volumes:
+      - "../:/app:cached"
