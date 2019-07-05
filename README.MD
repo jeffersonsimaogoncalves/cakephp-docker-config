@@ -9,15 +9,21 @@ For more details about installation read the [DOC](https://book.cakephp.org/3.0/
 ## Installation
 After setting UP CakePHP3 project, you have to clone docker config from this repo using this command:
 
-```git clone https://github.com/RoBYCoNTe/cakephp3-docker.git```
+```
+git clone https://github.com/RoBYCoNTe/cakephp3-docker.git
+```
 
 Edit your vhosts file adding this new line (this will enable navigation using localhost):
-`127.0.0.1 dev.local`
+```
+127.0.0.1 dev.local
+```
 
 ## Usage
 To use docker configuration just run this command inside your application's folder:
 
-`docker-compose -f docker/docker-compose.yml up`
+```
+docker-compose -f docker/docker-compose.yml up
+```
 
 Open webpage [http://localhost:8880](http://localhost:8880) to see the result. 
 
