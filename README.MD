@@ -35,7 +35,7 @@ Data associated to your instance will be stored inside docker/mariadb/data folde
 This will ensure the capability to move data between users and machines without any kind of problem.
 To get this working I've implemented these [guidelines](https://docs.docker.com/samples/library/mariadb/).
 To automatically change database configuration to get it working with docker:
-´´´
+```
 composer require robyconte/cakephp-dockerize
 bin/cake plugin load Dockerize
 bin/cake Dockerize.setup exec
