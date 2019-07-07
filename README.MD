@@ -23,7 +23,7 @@ This will create a new folder, inside your CakePHP project, called "docker" (
 Inside this folder you have all configuration files required to run virtualized
 environment with Nginx, PHP-FPM and MariaDB instance).
 
-After that, edit your vhosts file adding this new line (this will enable navigation using dev.local with NGINX on port 8881):
+After that, edit your vhosts file adding this new line (this will enable navigation using dev.local with NGINX on port 8880):
 ```
 127.0.0.1 dev.local
 ```
