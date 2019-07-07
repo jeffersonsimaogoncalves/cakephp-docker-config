@@ -20,7 +20,7 @@ git clone https://github.com/RoBYCoNTe/cakephp-docker-config.git docker
 ```
 
 This will create a new folder, inside your CakePHP project, called "docker" (
-Inside this folder you have all configuration files required to run virtualized
+inside this folder you will have all configuration files required to run virtualized
 environment with Nginx, PHP-FPM and MariaDB instance).
 
 After that, edit your vhosts file adding this new line (this will enable navigation using dev.local with NGINX on port 8880):
@@ -46,9 +46,13 @@ To automatically change database configuration, after first CakePHP installation
 plugin that can help doing it very fast:
 ```
 composer require robyconte/cakephp-dockerize
+docker exec -it docker_php_1 /bin/bash
+cd /app
 bin/cake plugin load Dockerize
 bin/cake Dockerize.setup exec
 ```
+
+The *docker_php_1* refer the container running php-fpm instance.
 
 ## Env
 You can edit environment variables editing .env file in the docker's root folder.
